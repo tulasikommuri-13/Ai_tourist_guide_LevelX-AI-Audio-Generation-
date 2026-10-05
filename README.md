@@ -2,6 +2,10 @@
 
 An AI-powered tourist guide that generates informative descriptions of tourist destinations using Google Gemini and converts them into natural-sounding audio using Murf AI.
 
+## 🌐 Live Demo
+
+👉 **[Try the AI Tourist Guide](https://aitouristguidelevelx-ai-audio-gener.vercel.app/)**
+
 ## ✨ Features
 
 - Generate AI-powered tourist descriptions
