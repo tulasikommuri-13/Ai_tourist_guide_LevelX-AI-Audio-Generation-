@@ -1,18 +1,23 @@
-from flask import Flask, jsonify, request
 from flask_cors import CORS
+from flask import Flask, jsonify, request, send_from_directory
 from google import genai
 import requests
 import tempfile
 import base64
-
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
-
-app = Flask(__name__)
+load_dotenv("Backend/.env")
+app = Flask(__name__, static_folder="Frontend", static_url_path="")
 CORS(app)
-MURF_API_KEY =os.getenv("MURF_API_KEY")
+
+@app.route("/")
+def home():
+    return send_from_directory("Frontend", "index.html")
+
+MURF_API_KEY = os.getenv("MURF_API_KEY")
+
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
